@@ -32,9 +32,16 @@ h2[class] {
   height: 80px;
 
   /* 안쪽여백 */
-  padding: 20px;
+  padding: 10px;
   /* 바깥여백 */
-  margin : 20px;
+  margin : 10px;
+
+  /* 패딩과 테두리를 포함 */
+  box-sizing: border-box;
+
+  display: flex ;
+  justify-content: center;
+  align-items: center;
 }
 
 .g2 {
@@ -51,4 +58,42 @@ h2[class] {
 /* 그룹 */
 #s1 , #s2 {
   background-color: gainsboro;
+}
+
+/* 인라인스타일 변경 */
+/* strong {
+  display: inline-block;
+  background-color: brown;
+  color: white;
+
+  width: 50%;
+  height: 40px;
+} */
+
+/* 구글폰트 */
+article > p {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* flex박스 설정 */
+.fbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.fbox > div {
+  margin-right: 20px;
+}
+
+/* 이미지 둥글게 */
+img {
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
 }
