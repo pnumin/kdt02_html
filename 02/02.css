@@ -12,19 +12,19 @@ header,
 main {
   background-color: aliceblue;
   box-sizing: border-box;
-  border: 1px aliceblue solid;
+  border: 1px aliceblue solid; 
 }
 
 ul {
   list-style: none;
 }
 
-header {
+header{
   display: flex;
   justify-content: space-between;
   padding: 20px;
 }
-
+ 
 nav>ul {
   display: flex;
 }
@@ -34,9 +34,9 @@ nav li {
   margin: 2px;
 }
 
-article {
+article { 
   padding-top: 50px;
-  padding-bottom: 0px;
+  padding-bottom: 0px; 
 }
 
 article>h1 {
@@ -49,7 +49,7 @@ article>p {
   font-family: "Dongle", sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 25px;
+  font-size: 25px; 
 }
 
 nav {
