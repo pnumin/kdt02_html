@@ -66,3 +66,41 @@ nav {
 #menu1 a:hover {
   background-color: brown;
 }
+
+.textred {
+  color: red;
+}
+
+section {
+  background-color: white;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+section > h2 {
+  margin-bottom: 10px;
+  background-color: gainsboro;
+  padding: 5px;
+}
+
+.fbox {
+  display: flex;
+}
+
+.fbox > div {
+  margin-right: 20px;
+  width: 20%;
+}
+
+.fbox > p {
+  width: 80%;
+  height: 150px;
+  /* border: 1px blue solid; */
+  display: flex;
+  align-items: center;
+}
+ 
+img {
+  border-radius: 50%;
+}
