@@ -22,3 +22,26 @@ header {
   justify-content:space-between;
   padding: 20px;
 }
+
+nav > ul {
+  display: flex;
+}
+
+nav li {
+  padding: 10px;
+  margin: 5px;
+}
+
+article {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+article > h1 {
+  display: flex;
+  justify-content: center;
+}
+
+article > p {
+  padding: 30px 50px;
+}
