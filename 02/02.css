@@ -80,7 +80,7 @@ section {
 
 section > h2 {
   margin-bottom: 10px;
-  background-color: gainsboro;
+  background-color: aliceblue;
   padding: 5px;
 }
 
@@ -95,12 +95,18 @@ section > h2 {
 
 .fbox > p {
   width: 80%;
-  height: 150px;
-  /* border: 1px blue solid; */
+  height: 150px; 
   display: flex;
-  align-items: center;
+  justify-content: start;
+  align-items: center; 
 }
- 
+
+.fbox span { 
+  display:contents;
+  color : blue;
+  font-weight: bold;
+}
+
 img {
   border-radius: 50%;
 }
