@@ -12,6 +12,7 @@ header,
 main {
   background-color: aliceblue;
   box-sizing: border-box;
+  border: 1px aliceblue solid;
 }
 
 ul {
@@ -35,7 +36,7 @@ nav li {
 
 article {
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 article>h1 {
@@ -110,3 +111,17 @@ section > h2 {
 img {
   border-radius: 50%;
 }
+
+footer {
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+footer > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+}
+
