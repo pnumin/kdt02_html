@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   for(let [idx, bt] of bts.entries()) {
  
-    bt.addEventListener('click' , ()=>{
+    bt.addEventListener('click' , (e)=>{
+      //0. 버튼이벤트 방지
+      e.preventDefault();
+      
       //1. 컴퓨터 랜덤수 생성 , 이미지 변경
       let n = Math.floor(Math.random() * 6) + 1 ;
       imgs[0].setAttribute('src', `../img/${n}.png`) ;
