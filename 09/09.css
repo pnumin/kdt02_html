@@ -1,0 +1,7 @@
+input, button {
+  height: 40px;
+}
+#btArea > button {
+  width : 150px ;
+  background-color: blueviolet;
+}
