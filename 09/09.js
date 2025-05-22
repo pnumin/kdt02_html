@@ -39,15 +39,26 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //2-3. n과 입력수가 같으면 good이미지 보이기, 다시하기 버튼 보이기
     else {
       img.setAttribute("src" , "../img/good.png") ;
-      btInput.style.display = "none" ;
-      btArea.style.display = 'block' ;
+      btInput.style.display = 'none' ;
+      btArea.style.display = 'flex' ;
     }
   });
   
   //다시하기 버튼이 눌러지면 
   bt2.addEventListener("click", ()=>{
     //1.flag 값을 false 만들기
+    flag = false ;
     //2.input과 확인 버튼이 보여지기
+    btInput.style.display = 'flex' ;
+    btArea.style.display = 'none' ;
+
+    //3.img는 what
+    img.setAttribute("src" , "../img/what.png") ;
+
+    //4. 초기화
+    txt1.value= "" ;
+    txt1.focus();
+    n = undefined ;
   });
  
 });

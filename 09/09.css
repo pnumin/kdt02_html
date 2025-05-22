@@ -1,7 +1,9 @@
 input, button {
   height: 40px;
+  margin-left: 10px;
 }
 #btArea > button {
   width : 150px ;
   background-color: blueviolet;
+  margin-left: 0px;
 }
