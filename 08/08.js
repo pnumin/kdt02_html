@@ -1,3 +1,4 @@
+//select 박스 값이 변경되면 호출 
 const selChange = (s1 , s2 , l1, l2, t1, t2) => {
   //select의 값을 변경
     if (s1.value == "℃") s2.value = "℉" ;
@@ -37,4 +38,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
   sel2.addEventListener('change', ()=>{
     selChange(sel2 , sel1 , lab2, lab1, txt1, txt2) ;
   }) ;
+
+  //3.input 요소에 값이 입력 될때
+  txt1.addEventListener("input" , () =>{
+    if (sel1.value == "℃") {
+      // ℃ -> ℉
+      txt2.value = parseFloat((txt1.value * (9/5)) + 32).toFixed(4) ;
+    }
+    else {
+      // ℉ -> ℃ 
+      txt2.value = parseFloat((txt1.value - 32) * (5/9)).toFixed(4) ;
+    }
+  });
 });
