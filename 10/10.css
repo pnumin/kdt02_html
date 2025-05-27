@@ -15,6 +15,12 @@
   margin: 5px;
 }
 
+.hbox {
+  width: 260px;
+  height: 260px;
+  border: 1px solid gainsboro;
+}
+
 img {
   width: 90%;
   height: 90%;

@@ -10,9 +10,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const cols = document.querySelectorAll(".col") ;
   const bt = document.querySelector(".row > button") ;
   const msg = document.querySelector("#msg") ;
+  const gbox = document.querySelector(".gbox");
+  const hbox = document.querySelector(".hbox");
+
   let arr = [0,0,0,0,0,0,0,0,1] ;
   let flag = false ; 
   let cnt = 0;
+  hbox.style.display = "none" ;
 
   for(let [idx, col] of cols.entries()) {
     // col.innerHTML = idx + 1 ;
@@ -30,7 +34,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         console.log(cnt, arr.indexOf(1))
         if ( cnt == 8 ) {
-          cols[arr.indexOf(1)].innerHTML = '<img src="../img/hart.png">' ;
+          // cols[arr.indexOf(1)].innerHTML = '<img src="../img/hart.png">' ;
+          hbox.style.display = "flex" ;
+          gbox.style.display = "none" ;
+          hbox.innerHTML = '<img src="../img/hart.png">';
+          
           msg.innerHTML = "성공!" ;
           flag = false ;
           bt.innerHTML = "폭탄섞기" ;
@@ -54,6 +62,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
       
       cnt = 0 ;
       console.log(arr);
+      hbox.style.display = "none" ;
+      gbox.style.display = "block" ;
       init(cols) ;
     }
   })
