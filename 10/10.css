@@ -17,8 +17,7 @@
 
 .hbox {
   width: 260px;
-  height: 260px;
-  border: 1px solid gainsboro;
+  height: 260px; 
   display:flex;
   justify-content: center;
   align-items: center;

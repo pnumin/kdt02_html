@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
           // cols[arr.indexOf(1)].innerHTML = '<img src="../img/hart.png">' ;
           hbox.style.display = "flex" ;
           gbox.style.display = "none" ;
-          hbox.innerHTML = '<img src="../img/hart.png">';
+          hbox.innerHTML = '<img src="../img/good.png">';
           
           msg.innerHTML = "성공!" ;
           flag = false ;
