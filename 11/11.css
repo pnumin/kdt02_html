@@ -1,17 +1,27 @@
+#mvMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
 .divDt, .mvul {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  
 }
+
 .divDt {
   background-color: aliceblue;
   height: 40px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .mvul {
   list-style: none;
+  width: 80%;
 }
 
 .mvul > li {
