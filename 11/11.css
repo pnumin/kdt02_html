@@ -1,0 +1,41 @@
+.divDt, .mvul {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.divDt {
+  background-color: aliceblue;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mvul {
+  list-style: none;
+}
+
+.mvul > li {
+  display: flex; 
+  border: none;
+  margin: 1px;
+  font-size: 12px;
+}
+
+.mvul > li:hover {
+  color: brown;
+}
+
+.spRank {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 2px;
+}
+
