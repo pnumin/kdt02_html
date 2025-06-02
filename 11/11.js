@@ -16,11 +16,20 @@ const yesterday = () => {
 
 const getPoster = (mvNm) => {
   console.log("getPoster" , mvNm);
+  const tmdbApi = "b42483d9af611184a5e87b9980e11075" ;
+  let url = `https://api.themoviedb.org/3/search/movie?api_key=${tmdbApi}&query=${mvNm}` ;
+  const poster = document.querySelector(".poster") ;
 
+  fetch(url)
+    .then(resp => resp.json())
+    .then(data => poster.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.results[0].poster_path}" />`) 
+    .catch(err => console.log(err)) ;
+
+  
 }
 const getMvList = (dt, ul, gubun) => {
   console.log("dt=", dt) 
-  const apikey = "" 
+  const apikey = "2a350cfbca6c428eb04c71e21cc681e7" 
 
   let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${dt}`;
   
@@ -74,7 +83,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   
   bt.addEventListener("click" , (e)=>{
     e.preventDefault();
-    const gubun = document.querySelector("[type=radio]:checked").value ; 
+    const gubun = document.querySelector("[type=radio]:checked").value ;
+    document.querySelector(".poster").innerHTML = "" ; 
     getMvList(dtIn.value.replaceAll('-',''), ul, gubun) ;
   });
 });
