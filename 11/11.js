@@ -15,10 +15,18 @@ const yesterday = () => {
 }
 
 
-const getMvList = (dt, ul) => {
+const getMvList = (dt, ul, gubun) => {
   console.log("dt=", dt) 
-  const url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=2a350cfbca6c428eb04c71e21cc681e7&targetDt=" + dt;
+  const apikey = "" 
+
+  let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${dt}`;
   
+  if (gubun == "r2") {
+    url = `${url}&multiMovieYn=N`
+  } else if (gubun == "r3") {
+    url = `${url}&multiMovieYn=Y`
+  } 
+
   // console.log(url)
   fetch(url) 
   .then(resp => resp.json())
@@ -36,7 +44,7 @@ const getMvList = (dt, ul) => {
                     :'<i class="fa-solid fa-minus sp"></i>'
                 }
             </li>` 
-                                  ) ;
+    ) ;
     let tags = mvList.join('') ;
      
     ul.innerHTML = tags ;                              
@@ -49,14 +57,20 @@ const getMvList = (dt, ul) => {
 document.addEventListener("DOMContentLoaded", ()=>{
   const ul = document.querySelector("main > ul") ;
   const dtIn = document.querySelector("#dt") ;
+  const bt = document.querySelector(".divRadio > button")
   dtIn.setAttribute("max", yesterday()) ;
 
   dtIn.value = yesterday() ; 
   getMvList(dtIn.value.replaceAll('-',''), ul) ;
   console.log(yesterday())
 
-  dtIn.addEventListener("change" , () => {
-    getMvList(dtIn.value.replaceAll('-',''), ul) ;
+  dtIn.addEventListener("change" , () => { 
+    getMvList(dtIn.value.replaceAll('-',''), ul, "") ;
   });
   
+  bt.addEventListener("click" , (e)=>{
+    e.preventDefault();
+    const gubun = document.querySelector("[type=radio]:checked").value ; 
+    getMvList(dtIn.value.replaceAll('-',''), ul, gubun) ;
+  });
 });
