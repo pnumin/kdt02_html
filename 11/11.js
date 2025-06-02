@@ -26,7 +26,7 @@ const getMvList = (dt, ul, gubun) => {
   } else if (gubun == "r3") {
     url = `${url}&multiMovieYn=Y`
   } 
-
+  
   // console.log(url)
   fetch(url) 
   .then(resp => resp.json())
@@ -55,7 +55,7 @@ const getMvList = (dt, ul, gubun) => {
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  const ul = document.querySelector("main > ul") ;
+  const ul = document.querySelector("main ul") ;
   const dtIn = document.querySelector("#dt") ;
   const bt = document.querySelector(".divRadio > button")
   dtIn.setAttribute("max", yesterday()) ;
