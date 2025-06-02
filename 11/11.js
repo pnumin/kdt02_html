@@ -14,10 +14,13 @@ const yesterday = () => {
   // return y+String(m).padStart(2, '0')+String(d).padStart(2,'0') ;
 }
 
+const getPoster = (mvNm) => {
+  console.log("getPoster" , mvNm);
 
+}
 const getMvList = (dt, ul, gubun) => {
   console.log("dt=", dt) 
-  const apikey = "2a350cfbca6c428eb04c71e21cc681e7" 
+  const apikey = "" 
 
   let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${dt}`;
   
@@ -33,8 +36,9 @@ const getMvList = (dt, ul, gubun) => {
   .then(data => {
     const dailyBoxOfficeList = data.boxOfficeResult.dailyBoxOfficeList ;
     console.log(dailyBoxOfficeList)
-    const mvList = dailyBoxOfficeList.map((item) => 
-           `<li>
+    const mvList = dailyBoxOfficeList.map((item) => {
+           const mv = encodeURIComponent(item.movieNm);
+           return `<li onClick=getPoster("${mv}")>
                 <span class="spRank">${item.rank}</span> 
                 <span class="spMv">${item.movieNm}</span>
                 ${parseInt(item.rankInten) > 0 
@@ -43,7 +47,7 @@ const getMvList = (dt, ul, gubun) => {
                     ?'<span class="spB"><i class="fa-solid fa-arrow-down"></i>' + Math.abs(item.rankInten) + "</span>"
                     :'<i class="fa-solid fa-minus sp"></i>'
                 }
-            </li>` 
+            </li>` }
     ) ;
     let tags = mvList.join('') ;
      
