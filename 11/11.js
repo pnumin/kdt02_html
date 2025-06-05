@@ -16,7 +16,7 @@ const yesterday = () => {
 
 const getPoster = (mvNm) => {
   console.log("getPoster" , mvNm);
-  const tmdbApi = "b42483d9af611184a5e87b9980e11075" ;
+  const tmdbApi = "" ;
   let url = `https://api.themoviedb.org/3/search/movie?api_key=${tmdbApi}&query=${mvNm}` ;
   const poster = document.querySelector(".poster") ;
 
@@ -29,7 +29,7 @@ const getPoster = (mvNm) => {
 }
 const getMvList = (dt, ul, gubun) => {
   console.log("dt=", dt) 
-  const apikey = "2a350cfbca6c428eb04c71e21cc681e7" 
+  const apikey = "" 
 
   let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${dt}`;
   
